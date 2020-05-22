@@ -44,6 +44,8 @@ class CreateTaskRepository {
       ...rest,
     });
 
+    await taskRepository.save(task);
+
     return task;
   }
 }
