@@ -1,7 +1,9 @@
 import { Router } from 'express';
 
+import todoRoutes from './todos.routes';
+
 const routes = Router();
 
-routes.get('/', (req, res) => res.json({ ok: true }));
+routes.use('/tasks', todoRoutes);
 
 export default routes;

@@ -1,11 +1,10 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class CreateToDos1590075094303 implements MigrationInterface {
-
-    public async up(queryRunner: QueryRunner): Promise<void> {
-    	 await queryRunner.createTable(
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.createTable(
       new Table({
-        name: 'todos',
+        name: 'tasks',
         columns: [
           {
             name: 'id',
@@ -30,14 +29,14 @@ export class CreateToDos1590075094303 implements MigrationInterface {
             isNullable: false,
           },
           {
-          	name: "start_date",
-          	type: "timestamp",
-          	isNullable: false
+            name: 'start_date',
+            type: 'timestamp',
+            isNullable: false,
           },
           {
-          	name: "end_date",
-          	type: "timestamp",
-          	isNullable: true
+            name: 'end_date',
+            type: 'timestamp',
+            isNullable: true,
           },
           {
             name: 'created_at',
@@ -52,10 +51,9 @@ export class CreateToDos1590075094303 implements MigrationInterface {
         ],
       }),
     );
-    }
+  }
 
-    public async down(queryRunner: QueryRunner): Promise<void> {
-    	await queryRunner.dropTable('todos');
-    }
-
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable('tasks');
+  }
 }

@@ -1,13 +1,3 @@
-import express from 'express';
+import server from './app';
 
-import routes from './routes';
-
-import './database';
-
-const app = express();
-
-app.use(routes);
-
-app.listen(3001);
-
-
+server.listen(3001);
